@@ -69,7 +69,7 @@ def webhook():
     data = request.get_json()
     if data.get("event") == "payment.captured":
         amount = data["payload"]["payment"]["entity"]["amount"]
-        if amount == 3000:  # ₹30 in paise
+        if amount == 100:  # ₹30 in paise
             control_plug(True)
             print("Plug ON for 30 minutes")
             time.sleep(1800)
