@@ -96,7 +96,7 @@ def webhook():
     if data.get("event") == "payment.captured":
         amount = data["payload"]["payment"]["entity"]["amount"]
         # ← change this to 3000 for ₹30.00
-        if amount == 3000:
+        if amount == 100:
             control_plug(True)   # turn ON immediately
             print("Plug ON for 30 minutes")
             # spawn a non‑blocking timer to turn it off later
