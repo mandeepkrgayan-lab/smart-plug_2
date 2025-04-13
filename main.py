@@ -104,7 +104,10 @@ def webhook():
             return jsonify({"message": "Plug activated"}), 200
 
     return jsonify({"message": "No action taken"}), 200
-
+@app.route('/test-plug-on', methods=['GET'])
+def test_plug_on():
+    control_plug(True)
+    return jsonify({"message": "Sent ON command to plug"}), 200
 if __name__ == '__main__':
     # 5c) Ensure you listen on 0.0.0.0:8000 for Railway
     app.run(host='0.0.0.0', port=8000)
